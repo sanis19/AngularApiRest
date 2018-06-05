@@ -1,17 +1,21 @@
 import { Component } from '@angular/core'; // importar clases de librerias
 import { Calculadora} from './Calculadora';
+import { environment} from '../environments/environment';
+
 
 // anotaciones
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
+  
 })
 
 //definir la clase
 export class AppComponent {
   //properties, son publicos y no es necesario los getters
   title = 'app';
+  subtitle = environment.subtitle;
   hello = 'Hello David';
   resultado;
   campo1:number;

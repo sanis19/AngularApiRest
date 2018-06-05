@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+
+<div>
+<!-- ngModel permite mapear su valor con los attributos del controlador -->
+<input [(ngModel)]="valor1" placeholder="valor1">
+<input [(ngModel)]="valor2" placeholder="valor2">
+<p>Total: {{ total }}</p>
+</div>
+<button (click)="suma()">Suma</button>
+<button (click)="resta()">Restar</button>
+<button (click)="multiplicar()">multiplicar</button>
+<button (click)="dividir()">Dividir</button>

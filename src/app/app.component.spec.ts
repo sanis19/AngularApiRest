@@ -11,15 +11,19 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
+//método de test "it"
   it('should create the app', async(() => {
+    //instanciamos componente
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
+    //se comprueba que existe
     expect(app).toBeTruthy();
   }));
 
   it(`should have as title 'app'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
+    //todo objecto puede acceder a las propiedades que tiene mapeadas con dual binding
     expect(app.title).toEqual('app');
   }));
 
