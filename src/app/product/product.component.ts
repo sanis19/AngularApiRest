@@ -22,6 +22,7 @@ export class ProductComponent {
   crearProduct():void { 
  } 
   ngOnInit() {
+    
   }
 
 }
