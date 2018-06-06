@@ -44,7 +44,7 @@
 
           <div class="form-group text-center">
             <div class="input-group" style="margin:auto;">
-              <button type="button" (click)="add();" class="btn"> Submit </button>
+              <button type="button" (click)="add();" [disabled]="dni.invalid || apellidos.invalid || nombre.invalid" class="btn"> Submit </button>
               </div>
             </div>
     </form>
