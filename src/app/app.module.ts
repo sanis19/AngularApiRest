@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule} from '@angular/http'; // hacer peticiones rest
 
 import { AppComponent } from './app.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component'
@@ -8,8 +9,9 @@ import { ProductComponent } from './product/product.component'
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { AgregarAlumnoComponent } from './agregar-alumno/agregar-alumno.component';
 import { routing} from './router';
-import {AlumnoService} from './alumno/alumno.service';
+import { AlumnoService} from './alumno/alumno.service';
 import { UpdateAlumnoComponent } from './update-alumno/update-alumno.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -19,12 +21,14 @@ import { UpdateAlumnoComponent } from './update-alumno/update-alumno.component';
     AlumnoComponent,
     ProductComponent,
     AgregarAlumnoComponent,
-    UpdateAlumnoComponent
+    UpdateAlumnoComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    routing,
+    HttpModule
   ],
   providers: [AlumnoService],
   //primer componente que se arranca
