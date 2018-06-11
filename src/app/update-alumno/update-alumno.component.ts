@@ -14,7 +14,7 @@ export class UpdateAlumnoComponent implements OnInit {
   alumno;
 
   ngOnInit() {
-    this.alumno = new Alumno(this.alumnoservice.alumno.nombre,
+    this.alumno = new Alumno(this.alumnoservice.alumno.id, this.alumnoservice.alumno.nombre,
       this.alumnoservice.alumno.apellidos,
       this.alumnoservice.alumno.dni);
   }

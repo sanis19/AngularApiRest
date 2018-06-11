@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Alumno} from './../alumno/Alumno';
 import {AlumnoService} from './../alumno/alumno.service';
-import { Router } from '@angular/router';
+import {Router } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-agregar-alumno',
@@ -11,9 +12,9 @@ import { Router } from '@angular/router';
 })
 export class AgregarAlumnoComponent implements OnInit {
 
-  alumno = new Alumno("","","");
+  alumno = new Alumno(0,"","","");
 
-  constructor(private router: Router,private alumnoservice:AlumnoService) { }
+  constructor(private Location:Location,private router: Router,private alumnoservice:AlumnoService) { }
 
   ngOnInit() {
   }
@@ -24,6 +25,7 @@ export class AgregarAlumnoComponent implements OnInit {
     //console.log("el numero de alumnos es "+ this.alumnoservice.getAlumnosList().length);
     this.alumnoservice.addAlumno(this.alumno);
    // console.log("el numero de alumnos es "+ this.alumnoservice.getAlumnosList().length);
-   this.router.navigate(['/alumno']);
+   //this.router.navigate(['/alumno']);
+   this.Location.back();
   }
 }

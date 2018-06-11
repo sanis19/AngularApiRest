@@ -13,6 +13,8 @@ import { Router,ActivatedRoute,ParamMap } from '@angular/router';
 export class AlumnoComponent implements OnInit {
 
   public listaAlumnos: Array<Alumno>;
+  public loading: boolean = false;
+  public buscarApellido : string;
 
   constructor(private router: Router,private alumnoservice:AlumnoService) { }
 
@@ -21,7 +23,10 @@ export class AlumnoComponent implements OnInit {
   }
 
   private refreshAlumnos(){
-    this.listaAlumnos = this.alumnoservice.getAlumnosList();
+    console.log("Entra en el modo refreshAlumnos");
+    //this.listaAlumnos = this.alumnoservice.getAlumnosList();
+    this.loading = true;
+    this.alumnoservice.getAlumnosList().then(_=>this.loading=false);
   }
 
   public update(alumno: Alumno, index){
@@ -35,6 +40,11 @@ export class AlumnoComponent implements OnInit {
   public delete(alumno: Alumno){
     // console.log("El nombre es " + alumno.nombre);
      this.alumnoservice.delete(alumno);
+     this.refreshAlumnos();
+  }
+
+  public buscar(){
+    this.alumnoservice.getElementById(this.buscarApellido);
   }
 
 }
